@@ -12,6 +12,14 @@
     "reverse-engineering"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bingine/cemem.git"
+  },
+  "homepage": "https://github.com/bingine/cemem#readme",
+  "bugs": {
+    "url": "https://github.com/bingine/cemem/issues"
+  },
   "type": "commonjs",
   "main": "./dist/cjs/index.js",
   "types": "./dist/types/index.d.ts",
