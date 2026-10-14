@@ -1,0 +1,18 @@
+# 依赖
+node_modules/
+*.log
+
+# Cheat Engine 官方源码：解包目录（约 45 MB / 2497 个文件）+ 原始压缩包（15.5 MB）
+# 都是本地查阅用的第三方 GPL 源码，不进本仓库
+_extract/
+cheat-engine-master.zip
+
+# npm 配置：当前只含 registry（无 token），但 .npmrc 是**最容易被写进 token**
+# 的文件之一 —— 直接排除，从根上避免哪天不小心把凭据提交上来
+.npmrc
+.npmrc.*
+
+# 临时文件与备份
+tmp-*
+*.bak-*
+package.json.bak-*

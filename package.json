@@ -1,0 +1,62 @@
+{
+  "name": "@bingine/cemem",
+  "version": "0.2.2",
+  "description": "Cheat Engine 核心引擎的 Node.js 移植版：跨进程内存扫描/修改引擎（对齐 Cheat Engine 的 memscan 算法语义）",
+  "keywords": [
+    "cheat-engine",
+    "memory-scanner",
+    "process-memory",
+    "aob",
+    "pointer-scan",
+    "win32",
+    "reverse-engineering"
+  ],
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "./dist/cjs/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "PORT-SCOPE.md",
+    "docs"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "os": [
+    "win32"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
+    "test": "node --test test/*.test.js",
+    "test:asm": "node --test test/asm.test.js",
+    "test:aa": "node --test test/autoassembler.test.js",
+    "test:scanner": "node --test test/scanner.test.js",
+    "test:cheattable": "node --test test/cheattable.test.js",
+    "test:backend": "node --test test/backend.test.js",
+    "test:dbk": "node --test test/dbk-backend.test.js",
+    "test:lua": "node --test test/lua-bridge.test.js",
+    "smoke": "node tools/smoke.js",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "dependencies": {
+    "capstone-wasm": "^1.0.3",
+    "keystone-wasm": "^1.0.4",
+    "koffi": "^2.10.1",
+    "wasmoon": "^1.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  }
+}
